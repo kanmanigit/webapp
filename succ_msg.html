@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+{% load static %}
+<div class="jumbotron">
+    <h1>Heart Disease Prediction </h1>
+    <div class="fieldWrapper">
+      <h2>For the values</h2>
+      <p>MaxHR:{{data_maxhr}}</p>
+      <p>ST_Slope_Flat:{{data_stslopeflat}}</p>
+      <p>ST_Slope_Up:{{data_stslopeup}}</p>
+      <br>
+      {% if out == 1 %}
+        <p>You <b>will have</b> have Heart Disease : <b>Positive</b></p>
+      {% else %}
+        <p>You <b>will not</b> have  Heart Disease :<b>Negetive</b></p>
+
+      {% endif %}
+
+    <a  href="{% url 'ckdApp:ckd' %}">CKD Predicition</a>
+    <br>
+</div>
+{% endblock %}
